@@ -1,4 +1,6 @@
 import {useState} from "react"
+import { IonIcon } from '@ionic/react';
+import { close } from 'ionicons/icons';
 import './style.css';
 
 function App() {
@@ -30,14 +32,14 @@ function App() {
             <a href="#">About</a>
             <a href="#">Service</a>
             <a href="#">Contact</a>
-            <button onClick={handleDisplayPopupOff} className="btnlogin-popup">Login</button>
+            <button onClick={handleDisplayPopupOn} className="btnlogin-popup">Login</button>
         </nav>
       </header>
 
-      <div className={`wrapper ${open ? "" : "active-popup"} ${register ? "active" : ""}`}>
+      <div className={`wrapper ${open ? "active-popup" : ""} ${register ? "active" : ""}`}>
 
-        <span className="icon-close" onClick={handleDisplayPopupOn}>
-            <ion-icon name="close"></ion-icon>
+        <span className="icon-close" onClick={handleDisplayPopupOff}>
+            <IonIcon icon={close}></IonIcon>
         </span>
 
      
