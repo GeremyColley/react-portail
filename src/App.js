@@ -1,19 +1,24 @@
 import {useState} from "react"
-//import logo from './logo.svg';
-//import './App.css';
 import './style.css';
-
 
 function App() {
   const [open, setOpen] = useState(false);
   const [register, setRegister] = useState(false);
   
-  const handleDisplayLPopup = () => {
-    setOpen((prev) => (prev ? false : true));
+  const handleDisplayPopupOn = () => {
+    setOpen(true);
+  };
+
+  const handleDisplayPopupOff = () => {
+    setOpen(false);
   };
 
   const handleDisplayRegister = () => {
-    setRegister((prev) => (prev ? false : true));
+    setRegister(true);
+  };
+
+  const handleDisplayLogin = () => {
+    setRegister(false);
   };
 
   return (
@@ -25,17 +30,18 @@ function App() {
             <a href="#">About</a>
             <a href="#">Service</a>
             <a href="#">Contact</a>
-            <button onClick={handleDisplayLPopup} className="btnlogin-popup">Login</button>
+            <button onClick={handleDisplayPopupOff} className="btnlogin-popup">Login</button>
         </nav>
       </header>
 
-      <div className={`wrapper ${open && "active-popup"}`}>
+      <div className={`wrapper ${open ? "" : "active-popup"} ${register ? "active" : ""}`}>
 
-        <span className="icon-close" onClick={handleDisplayLPopup}>
+        <span className="icon-close" onClick={handleDisplayPopupOn}>
             <ion-icon name="close"></ion-icon>
         </span>
 
-        <div className={`form-box ${register && "login"}`}>
+     
+        <div className="form-box login">
           <h2>login</h2>
           <form action="#">
               <div className="input-box">
@@ -54,12 +60,12 @@ function App() {
               </div>
               <button type="submit" className="btn">Login</button>
               <div className="login-register">
-                  <p>Don't have an account? <a href="#" className="register-link">Register</a></p>
+                <p>Don't have an account? <a href="#" onClick={handleDisplayRegister}>Register</a></p>
               </div>
           </form>
         </div>
 
-        <div className={`form-box ${register && "register"}`}>
+        <div className="form-box register">
             <h2>Registration</h2>
             <form action="#">
                 <div className="input-box">
@@ -84,7 +90,7 @@ function App() {
                 </div>
                 <button type="submit" class="btn">Register</button>
                 <div className="login-register">
-                    <p>Already Don't have an account ? <a href="#" className="login-link">Login</a></p>
+                    <p>Already Don't have an account ? <a href="#" onClick={handleDisplayLogin}>Login</a></p>
                 </div>
             </form>
         </div>
@@ -116,10 +122,13 @@ export default App;
 //
 //
 // addEventListener
-//<div className="form-box register">
-//  <div className="form-box register">
-// <div className={`wrapper ${register && ".form-box.register"}`}>
+// <div className="form-box register">
 // <div className="form-box login">
-//<div className={`form-box ${register && "login"}`}>
-//  <div className="form-box login">
-//<div className="form-box register">
+// <div className={`wrapper ${register && ".form-box.register"}`}>
+// <div className={`form-box ${register && "login"}`}>
+//  <div className={`${register ? "form-box login" : "active form-box login"}`}>
+//  <p>Don't have an account? <a href="#" className="register-link">Register</a></p>
+//<div className={`${register ? "active form-box register" : "form-box register"}`}>
+// const handleDisplayPopupON = () => {
+//    setOpen((prev) => (prev ? false : true));
+//  };
