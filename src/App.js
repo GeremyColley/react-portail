@@ -8,7 +8,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const [register, setRegister] = useState(false);
   
-  const handleDisplayLogin = () => {
+  const handleDisplayLPopup = () => {
     setOpen((prev) => (prev ? false : true));
   };
 
@@ -25,17 +25,16 @@ function App() {
             <a href="#">About</a>
             <a href="#">Service</a>
             <a href="#">Contact</a>
-            <button onClick={handleDisplayLogin} className="btnlogin-popup">Login</button>
+            <button onClick={handleDisplayLPopup} className="btnlogin-popup">Login</button>
         </nav>
       </header>
 
       <div className={`wrapper ${open && "active-popup"}`}>
 
-        <span className="icon-close" onClick={handleDisplayLogin}>
+        <span className="icon-close" onClick={handleDisplayLPopup}>
             <ion-icon name="close"></ion-icon>
         </span>
 
-       
         <div className={`form-box ${register && "login"}`}>
           <h2>login</h2>
           <form action="#">
@@ -123,4 +122,4 @@ export default App;
 // <div className="form-box login">
 //<div className={`form-box ${register && "login"}`}>
 //  <div className="form-box login">
-//<div className="form-box register"></div>
+//<div className="form-box register">
