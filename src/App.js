@@ -30,10 +30,13 @@ function App() {
       </header>
 
       <div className={`wrapper ${open && "active-popup"}`}>
-        <span className="icon-close" onClick={() => {setOpen(false);}}>
+
+        <span className="icon-close" onClick={handleDisplayLogin}>
             <ion-icon name="close"></ion-icon>
         </span>
-        <div className="form-box login">
+
+       
+        <div className={`form-box ${register && "login"}`}>
           <h2>login</h2>
           <form action="#">
               <div className="input-box">
@@ -52,14 +55,12 @@ function App() {
               </div>
               <button type="submit" className="btn">Login</button>
               <div className="login-register">
-                  <p>Don't have an account? <a href="#" className="register-link" onClick={handleDisplayRegister}>Register</a></p>
+                  <p>Don't have an account? <a href="#" className="register-link">Register</a></p>
               </div>
           </form>
         </div>
 
-       
-        <div className={`wrapper ${register && " .register-link"}`}>
-        
+        <div className={`form-box ${register && "register"}`}>
             <h2>Registration</h2>
             <form action="#">
                 <div className="input-box">
@@ -119,3 +120,7 @@ export default App;
 //<div className="form-box register">
 //  <div className="form-box register">
 // <div className={`wrapper ${register && ".form-box.register"}`}>
+// <div className="form-box login">
+//<div className={`form-box ${register && "login"}`}>
+//  <div className="form-box login">
+//<div className="form-box register"></div>
