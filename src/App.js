@@ -1,8 +1,6 @@
 import {useState} from "react"
 import { IonIcon } from '@ionic/react';
 import { close, mail, person, lockClosed } from 'ionicons/icons';
-//<ion-icon name="mail"></ion-icon>
-//<ion-icon name="lock-closed"></ion-icon>
 import './style.css';
 
 function App() {
