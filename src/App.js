@@ -1,6 +1,8 @@
 import {useState} from "react"
 import { IonIcon } from '@ionic/react';
-import { close } from 'ionicons/icons';
+import { close, mail, person, lockClosed } from 'ionicons/icons';
+//<ion-icon name="mail"></ion-icon>
+//<ion-icon name="lock-closed"></ion-icon>
 import './style.css';
 
 function App() {
@@ -47,12 +49,12 @@ function App() {
           <h2>login</h2>
           <form action="#">
               <div className="input-box">
-                  <span className="icon"><ion-icon name="mail"></ion-icon></span>
+                  <span className="icon"><IonIcon icon={mail}></IonIcon></span>
                   <input type="email" required />
                   <label>Email</label>
               </div>
               <div className="input-box">
-                  <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                  <span class="icon"><IonIcon icon={lockClosed}></IonIcon></span>
                   <input type="password" required />
                   <label>Password</label>
               </div>
@@ -72,18 +74,18 @@ function App() {
             <form action="#">
                 <div className="input-box">
                     <span className="icon">
-                        <ion-icon name="person"></ion-icon>
+                        <IonIcon icon={person}></IonIcon>
                     </span>
                     <input type="text" required />
                     <label>Username</label>
                 </div>
                 <div className="input-box">
-                    <span className="icon"><ion-icon name="mail"></ion-icon></span>
+                    <span className="icon"><IonIcon icon={mail}></IonIcon></span>
                     <input type="email" required />
                     <label>Email</label>
                 </div>
                 <div className="input-box">
-                    <span className="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <span className="icon"><IonIcon icon={lockClosed}></IonIcon></span>
                     <input type="password" required />
                     <label>Password</label>
                 </div>
