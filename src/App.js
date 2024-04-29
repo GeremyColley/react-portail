@@ -62,7 +62,7 @@ function App() {
               </div>
               <button type="submit" className="btn">Login</button>
               <div className="login-register">
-                <p>Don't have an account? <a href="#" onClick={handleDisplayRegister}>Register</a></p>
+                <p>Don't have an account ? <a href="#" onClick={handleDisplayRegister}>Register</a></p>
               </div>
           </form>
         </div>
