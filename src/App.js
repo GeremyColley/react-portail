@@ -6,7 +6,16 @@ import './style.css';
 function App() {
   const [open, setOpen] = useState(false);
   const [register, setRegister] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   
+  const handleSubmit = async (event) => {
+      event.preventDefault();
+      
+      console.log("=> email : " + email );
+      console.log("=> Password : " + password );
+  };
+
   const handleDisplayPopupOn = () => {
     setOpen(true);
   };
@@ -45,15 +54,26 @@ function App() {
      
         <div className="form-box login">
           <h2>login</h2>
-          <form action="#">
+          <form  onSubmit={handleSubmit}> 
               <div className="input-box">
                   <span className="icon"><IonIcon icon={mail}></IonIcon></span>
-                  <input type="email" required />
+                  <input
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                      
+                    }} 
+                    type="email" 
+                    required />
                   <label>Email</label>
               </div>
               <div className="input-box">
                   <span class="icon"><IonIcon icon={lockClosed}></IonIcon></span>
-                  <input type="password" required />
+                  <input
+                    onChange={(event) => {
+                      setPassword(event.target.value);
+                    }} 
+                    type="password" 
+                    required />
                   <label>Password</label>
               </div>
               <div className="remember-forgot">
