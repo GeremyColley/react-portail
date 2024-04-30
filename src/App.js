@@ -24,7 +24,7 @@ function App() {
     console.log("=> username : " + username );
     console.log("=> email : " + emailRegister );
     console.log("=> Password : " + passwordRegister );
-};
+  };
 
 
   const handleDisplayPopupOn = () => {
@@ -91,7 +91,7 @@ function App() {
               </div>
               <button type="submit" className="btn">Login</button>
               <div className="login-register">
-                <p>Don't have an account ? <a href="#" onClick={handleDisplayRegister}>Register</a></p>
+                <p>Don't have an account ? <a onClick={handleDisplayRegister}>Register</a></p>
               </div>
           </form>
         </div>
@@ -134,7 +134,7 @@ function App() {
                 </div>
                 <button type="submit" class="btn">Register</button>
                 <div className="login-register">
-                    <p>Already Don't have an account ? <a href="#" onClick={handleDisplayLogin}>Login</a></p>
+                    <p>Already Don't have an account ? <a onClick={handleDisplayLogin}>Login</a></p>
                 </div>
             </form>
         </div>
