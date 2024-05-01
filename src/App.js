@@ -4,8 +4,8 @@ import { close, mail, person, lockClosed } from 'ionicons/icons';
 import './style.css';
 
 function App() {
-  const [open, setOpen] = useState(false);
-  const [register, setRegister] = useState(false);
+  const [open, setOpen] = useState("active-popup");
+  const [register, setRegister] = useState("active");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailRegister, setEmailRegister] = useState("");
@@ -26,21 +26,20 @@ function App() {
     console.log("=> Password : " + passwordRegister );
   };
 
-
   const handleDisplayPopupOn = () => {
-    setOpen(true);
+    setOpen("active-popup");
   };
 
   const handleDisplayPopupOff = () => {
-    setOpen(false);
+    setOpen("");
   };
 
   const handleDisplayRegister = () => {
-    setRegister(true);
+    setRegister("active");
   };
 
   const handleDisplayLogin = () => {
-    setRegister(false);
+    setRegister("");
   };
 
   return (
@@ -56,7 +55,7 @@ function App() {
         </nav>
       </header>
 
-      <div className={`wrapper ${open ? "active-popup" : ""} ${register ? "active" : ""}`}>
+      <div className={`wrapper ${open} ${register}`}>
 
         <span className="icon-close" onClick={handleDisplayPopupOff}>
             <IonIcon icon={close}></IonIcon>
