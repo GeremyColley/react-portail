@@ -4,8 +4,8 @@ import { close, mail, person, lockClosed } from 'ionicons/icons';
 import './style.css';
 
 function App() {
-  const [open, setOpen] = useState("active-popup");
-  const [register, setRegister] = useState("active");
+  const [open, setOpen] = useState("");
+  const [register, setRegister] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailRegister, setEmailRegister] = useState("");
@@ -129,7 +129,7 @@ function App() {
                     <label>Password</label>
                 </div>
                 <div className="remember-forgot">
-                    <label><input type="checkbox" /> I agree to the terms & conditions</label>
+                    <label><input type="checkbox"/> I agree to the terms & conditions</label>
                 </div>
                 <button type="submit" class="btn">Register</button>
                 <div className="login-register">
